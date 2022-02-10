@@ -17,7 +17,7 @@ public abstract class Library {
     private String genre;
     private String coverPage;
     private String description;
-
+    
     /**
      * Constructor por defecto de la clase Library
      */
