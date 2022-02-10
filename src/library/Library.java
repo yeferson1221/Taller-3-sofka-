@@ -4,19 +4,22 @@ import java.util.GregorianCalendar;
 
 /**
  * @author  Jose Daniel Maza - josedmaza21@gmail.com
- * @version 1.0.0
+ * @version 1.1.0
  * @since   2022-01-09
  * Clase que representa un bilioteca de musica
  */
-public abstract class Library {
-
-    private String title;
-    private int ID;
-    private Date date;
-    private int length;
-    private String genre;
-    private String coverPage;
-    private String description;
+public abstract class Library implements FilterMelodi{
+    /**
+     * @author  Yeferson Valencia - alejandro.yandd@gmail.com
+     *se cambian las modificadores de acceso de privados a protegidos
+     */
+    protected String title;
+    protected int ID;
+    protected Date date;
+    protected int length;
+    protected String genre;
+    protected String coverPage;
+    protected String description;
     
     /**
      * Constructor por defecto de la clase Library
@@ -54,59 +57,151 @@ public abstract class Library {
         this.description = description;
     }
 
-    public String getTitle() {
-        return title;
+    /**
+     * @author  Yeferson Valencia - alejandro.yandd@gmail.com
+     * se eliminan los getter y setter
+     */
+
+
+    /**
+     * [filtra canciones por año.
+     *
+     * incorpore indicaciones de uso del mismo para facilitar su compresión.
+     * ej.:
+     *
+     *   ...;
+     *   clase.unaLogicaDeNegocioDeterminada(valor1, valor2);
+     *   ValorDeRespuesta valor = clase.execute();
+     * ]
+     *
+     * @param arg
+     * @param arg2
+     * @return
+     * @throws Exception
+     *
+     * @author [Yeferson Valencia ,alejandro.yandd@gmail.com
+     *
+     */
+    @Override
+    public void filterAge() {
+
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    /**
+     * [filtra canciones por genero.
+     *
+     * incorpore indicaciones de uso del mismo para facilitar su compresión.
+     * ej.:
+     *
+     *   ...;
+     *   clase.unaLogicaDeNegocioDeterminada(valor1, valor2);
+     *   ValorDeRespuesta valor = clase.execute();
+     * ]
+     *
+     * @param arg
+     * @param arg2
+     * @return
+     * @throws Exception
+     *
+     * @author [Yeferson Valencia ,alejandro.yandd@gmail.com
+     *
+     */
+    @Override
+    public void filterGender() {
+
     }
 
-    public int getID() {
-        return ID;
+    /**
+     * [filtra canciones por duracion de la canción.
+     *
+     * incorpore indicaciones de uso del mismo para facilitar su compresión.
+     * ej.:
+     *
+     *   ...;
+     *   clase.unaLogicaDeNegocioDeterminada(valor1, valor2);
+     *   ValorDeRespuesta valor = clase.execute();
+     * ]
+     *
+     * @param arg
+     * @param arg2
+     * @return
+     * @throws Exception
+     *
+     * @author [Yeferson Valencia ,alejandro.yandd@gmail.com
+     *
+     */
+    @Override
+    public void orderDuration() {
+
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    /**
+     * [filtra canciones por fecha.
+     *
+     * incorpore indicaciones de uso del mismo para facilitar su compresión.
+     * ej.:
+     *
+     *   ...;
+     *   clase.unaLogicaDeNegocioDeterminada(valor1, valor2);
+     *   ValorDeRespuesta valor = clase.execute();
+     * ]
+     *
+     * @param arg
+     * @param arg2
+     * @return
+     * @throws Exception
+     *
+     * @author [Yeferson Valencia ,alejandro.yandd@gmail.com
+     *
+     */
+    @Override
+    public void orderDate() {
+
     }
 
-    public Date getDate() {
-        return date;
+    /**
+     * [guardar el listado de todas las canciónes.
+     *
+     * incorpore indicaciones de uso del mismo para facilitar su compresión.
+     * ej.:
+     *
+     *   ...;
+     *   clase.unaLogicaDeNegocioDeterminada(valor1, valor2);
+     *   ValorDeRespuesta valor = clase.execute();
+     * ]
+     *
+     * @param arg
+     * @param arg2
+     * @return
+     * @throws Exception
+     *
+     * @author [Yeferson Valencia ,alejandro.yandd@gmail.com
+     *
+     */
+    public void lisMelody(){
+
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+    /**
+     * [listado canciónes favoritas.
+     *
+     * incorpore indicaciones de uso del mismo para facilitar su compresión.
+     * ej.:
+     *
+     *   ...;
+     *   clase.unaLogicaDeNegocioDeterminada(valor1, valor2);
+     *   ValorDeRespuesta valor = clase.execute();
+     * ]
+     *
+     * @param arg
+     * @param arg2
+     * @return
+     * @throws Exception
+     *
+     * @author [Yeferson Valencia ,alejandro.yandd@gmail.com
+     *
+     */
+    public void LisMelodyFavorite(){
 
-    public int getLength() {
-        return length;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public String getCoverPage() {
-        return coverPage;
-    }
-
-    public void setCoverPage(String coverPage) {
-        this.coverPage = coverPage;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 }
