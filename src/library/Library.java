@@ -48,33 +48,7 @@ public abstract class Library implements FilterMelodi{
      * @param description
      */
     public Library(String title, int ID, int agno, int mes, int dia, int length, String coverPage, String description) {
-        Scanner sc = new Scanner(System.in);
 
-        System.out.println("Ingrese el titulo de la cancion: ");
-        title = sc.nextLine();
-
-        this.ID = ID;
-        System.out.println("Ingrese la fecha de creacion de la cancion: ");
-        System.out.println("Ingrese el año: ");
-        agno = sc.nextInt();
-
-        System.out.println("Ingrese el mes: ");
-        mes = sc.nextInt();
-
-        System.out.println("Ingrese el dia: ");
-        dia = sc.nextInt();
-
-        date = new GregorianCalendar(agno, mes, dia).getTime();
-
-        System.out.println("Ingrese la duracion de la cancion: ");
-        length = sc.nextInt();
-
-
-        System.out.println("Ingrese la portada de la cancion: ");
-        coverPage = sc.nextLine();
-
-        System.out.println("Ingrese la descripcion de la cancion: ");
-        description = sc.nextLine();
     }
 
     /**
