@@ -1,4 +1,5 @@
 package library;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
@@ -9,18 +10,12 @@ import java.util.Scanner;
  * @since   2022-01-09
  * Clase que representa un bilioteca de musica
  */
-public abstract class Library implements FilterMelodi{
+public  class Library implements FilterMelodi{
     /**
      * @author  Yeferson Valencia - alejandro.yandd@gmail.com
      *se cambian las modificadores de acceso de privados a protegidos
      */
-    protected String title;
-    protected int ID;
-    protected Date date;
-    protected int length;
-    protected String genre;
-    protected String coverPage;
-    protected String description;
+
     
     /**
      * Constructor por defecto de la clase Library
@@ -33,6 +28,7 @@ public abstract class Library implements FilterMelodi{
         this.genre = "";
         this.coverPage = "";
         this.description = "";
+        this.age="";
     }
 
     /**
@@ -47,8 +43,61 @@ public abstract class Library implements FilterMelodi{
      * @param coverPage
      * @param description
      */
-    public Library(String title, int ID, int agno, int mes, int dia, int length, String coverPage, String description) {
 
+
+
+    ArrayList<Song> lisSong = new ArrayList();
+    Scanner in = new Scanner(System.in);
+
+
+
+
+    public void addSoung() {
+        System.out.println("ingresar nombre de la cancion");
+        String title=in.nextLine();
+        System.out.println("ingresar nombre de la artista");
+        String coverPage=in.nextLine();
+        System.out.println("ingresar de año");
+        int age=in.nextInt();
+        Song song = new Song();
+        song.setTitle(title);
+        song.coverPage(coverPage);
+        song.age(age);
+        lisSong.add(song);
+    }
+
+
+
+    public void getToList(){
+        Soung higher = new Soung();
+        for (int i = 0; i < lisSong.size(); i++) {
+            for (int j = i+1; j < lisSong.size(); j++) {
+                if (lisSong.get(i).getAge() > lisSong.get(j).getAge()) {
+                    higher = lisSong.get(i);
+                    lisSong.set(i, lisSong.get(j));
+                    lisSong.set(j, higher);
+                }
+            }
+
+        }
+
+        for (Soung num: lisSong) {
+            System.out.println(num.getName() + " " + num.getAge());
+        }
+    }
+
+    public void getSoung() {
+
+        for (int i = 0; i < lisSong.size(); i++) {
+            System.out.println("[Numero: ]"+(+i+1));
+            System.out.println("[NOMBRE: ]"+lisSong.get(i).getName());
+            System.out.println("[artista: ]"+lisSong.get(i).getGenero());
+            System.out.println("[año: ]"+lisSong.get(i).getAge());
+        }
+
+    }
+    public void clearListSoung(){
+        lisSong.clear();
     }
 
     /**
