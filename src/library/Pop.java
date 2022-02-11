@@ -2,7 +2,7 @@ package library;
 
 import java.util.Scanner;
 
-public class Pop extends Library {
+public class Pop extends LisSong {
 
     private String genre;
 
@@ -12,8 +12,4 @@ public class Pop extends Library {
         this.genre = "Pop";
     }
 
-    @Override
-    public String toString(){
-        return "Titulo: " + title + "\n" + "Duracion: " + length + "\n" + "Descripcion: " + description + "\n" + "Portada: " + coverPage + "\n" + "Genero: " + genre + "\n";
-    }
 }
