@@ -36,6 +36,7 @@ public class Main {
         Rock rock1 = new Rock();
         Salsa salsa1 = new Salsa();
         Blues blues1 = new Blues();
+        Song song1 = new Song();
 
         Scanner in= new Scanner(System.in);
         int opcion1;
@@ -44,8 +45,11 @@ public class Main {
                     "Menu Principal\n"
                             +"1. POP\n"
                             +"2. REGUETON\n"
-                            +"3. LISTA TODO\n"
-                            +"4. EXIT");
+                            +"3. ROCK\n"
+                            +"4. SALSA\n"
+                            +"5. BLUES\n"
+                            +"6. LISTA TODO\n"
+                            +"7. SALIR\n");
             System.out.println("");
             System.out.println("Ingresar opcion: ");
             System.out.println("--------------------------------------------------------------------");
@@ -56,8 +60,8 @@ public class Main {
                 do {
                     System.out.println(
                             "Menu Principal\n"
-                                    + "1. agregar cancion\n"
-                                    + "2. listar canciones de este genero\n"
+                                    + "1. Agregar cancion\n"
+                                    + "2. Listar canciones de este genero\n"
                                     + "3. Listar Canciones por año\n"
                                     + "4. Eliminar lista\n"
                                     + "5. Exit");
@@ -99,10 +103,11 @@ public class Main {
                 do {
                     System.out.println(
                             "Menu Principal\n"
-                                    + "1. Add Soung\n"
-                                    + "2. list Soung\n"
-                                    + "3. Clear List Soung\n"
-                                    + "4. Exit");
+                                    + "1. Agregar cancion\n"
+                                    + "2. Listar canciones de este genero\n"
+                                    + "3. Listar Canciones por año\n"
+                                    + "4. Eliminar lista\n"
+                                    + "5. Exit");
                     System.out.println("");
                     System.out.println("--------------------------------------------------------------------");
                     opcion = in.nextByte();
@@ -116,9 +121,13 @@ public class Main {
                             break;
 
                         case 3:
-                            reggaeton1.clearListSong();
+                            reggaeton1.getToList();
                             break;
                         case 4:
+                            reggaeton1.clearListSong();
+                            break;
+
+                        case 5:
                             System.out.println("inicio");
                             break;
 
@@ -127,19 +136,160 @@ public class Main {
                             break;
 
                     }
-                } while (opcion != 4);
+                } while (opcion != 5);
 
-            }else if (opcion1==3){
+            }else if(opcion1==3) {
+
+                byte opcion;
+
+                do {
+                    System.out.println(
+                            "Menu Principal\n"
+                                    + "1. Agregar cancion\n"
+                                    + "2. Listar canciones de este genero\n"
+                                    + "3. Listar Canciones por año\n"
+                                    + "4. Eliminar lista\n"
+                                    + "5. Exit");
+                    System.out.println("");
+                    System.out.println("--------------------------------------------------------------------");
+                    opcion = in.nextByte();
+
+                    switch (opcion) {
+                        case 1:
+                            rock1.addSong();
+                            break;
+
+                        case 2:
+                            rock1.getSong();
+                            break;
+
+                        case 3:
+                            rock1.getToList();
+                            break;
+
+                        case 4:
+                            rock1.clearListSong();
+                            break;
+
+                        case 5:
+                            System.out.println("inicio");
+                            break;
+
+                        default:
+                            System.out.println("no valido");
+                            break;
+
+                    }
+
+                } while (opcion != 5);
+
+            } else if(opcion1==4) {
+
+                byte opcion;
+
+                do {
+                    System.out.println(
+                            "Menu Principal\n"
+                                    + "1. Agregar cancion\n"
+                                    + "2. Listar canciones de este genero\n"
+                                    + "3. Listar Canciones por año\n"
+                                    + "4. Eliminar lista\n"
+                                    + "5. Exit");
+                    System.out.println("");
+                    System.out.println("--------------------------------------------------------------------");
+                    opcion = in.nextByte();
+
+                    switch (opcion) {
+                        case 1:
+                            salsa1.addSong();
+                            break;
+
+                        case 2:
+                            salsa1.getSong();
+                            break;
+
+                        case 3:
+                            salsa1.getToList();
+                            break;
+
+                        case 4:
+                            salsa1.clearListSong();
+                            break;
+
+                        case 5:
+                            System.out.println("inicio");
+                            break;
+
+                        default:
+                            System.out.println("no valido");
+                            break;
+                    }
+                } while (opcion != 5);
+
+            } else if(opcion1==5) {
+
+                byte opcion;
+
+                do {
+                    System.out.println(
+                            "Menu Principal\n"
+                                    + "1. Agregar cancion\n"
+                                    + "2. Listar canciones de este genero\n"
+                                    + "3. Listar Canciones por año\n"
+                                    + "4. Eliminar lista\n"
+                                    + "5. Exit");
+                    System.out.println("");
+                    System.out.println("--------------------------------------------------------------------");
+                    opcion = in.nextByte();
+
+                    switch (opcion) {
+                        case 1:
+                            blues1.addSong();
+                            break;
+
+                        case 2:
+                            blues1.getSong();
+                            break;
+
+                        case 3:
+                            blues1.getToList();
+                            break;
+
+                        case 4:
+                            blues1.clearListSong();
+                            break;
+
+                        case 5:
+                            System.out.println("inicio");
+                            break;
+
+                        default:
+                            System.out.println("no valido");
+                            break;
+                    }
+                } while (opcion != 5);
+
+            } else if(opcion1==6) {
                 System.out.println("");
                 System.out.println("--------------------------------------------------------------------");
                 pop1.getSong();
                 System.out.println("");
                 System.out.println("--------------------------------------------------------------------");
                 reggaeton1.getSong();
-
+                System.out.println("");
+                System.out.println("--------------------------------------------------------------------");
+                rock1.getSong();
+                System.out.println("");
+                System.out.println("--------------------------------------------------------------------");
+                salsa1.getSong();
+                System.out.println("");
+                System.out.println("--------------------------------------------------------------------");
+                blues1.getSong();
             }
 
-        } while (opcion1 != 4);
+        } while (opcion1 != 7);
     }
+
+
 
 }

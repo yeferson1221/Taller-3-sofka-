@@ -27,21 +27,25 @@ package library;
  * @since [1,0,0]
  *
  */
-public class Song {
+public class Song extends LisSong {
     private String name;
     private String singer;
-    private Float songDuration;
+    private String songDuration;
     private  int age;
+    private String coverPage;
+    private String description;
+    private String genre;
 
     //constructor
     public Song(){
         name = "";
         singer ="";
-        songDuration=0f;
+        songDuration="";
         int age = 0;
-
+        coverPage = "";
+        description = "";
+        genre = "";
     }
-
 
     public String getName() {
         return name;
@@ -55,8 +59,16 @@ public class Song {
         return singer;
     }
 
-    public void setGenero(String singer) {
-        this.singer= singer;
+    public void setSinger(String singer) {
+        this.singer = singer;
+    }
+
+    public String getSongDuration() {
+        return songDuration;
+    }
+
+    public void setSongDuration(String songDuration) {
+        this.songDuration = songDuration;
     }
 
     public int getAge() {
@@ -65,5 +77,29 @@ public class Song {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getCoverPage() {
+        return coverPage;
+    }
+
+    public void setCoverPage(String coverPage) {
+        this.coverPage = coverPage;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 }

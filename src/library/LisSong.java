@@ -32,7 +32,7 @@ import java.util.Scanner;
 public abstract class LisSong implements FilterMelodi {
 
     ArrayList<Song> lisSong = new ArrayList();
-    Scanner in = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
 
 
 
@@ -61,16 +61,26 @@ public abstract class LisSong implements FilterMelodi {
  *
  */
     public void addSong() {
-        System.out.println("ingresar nombre de la cancion");
-        String name=in.nextLine();
-        System.out.println("ingresar nombre de la artista");
-        String singer=in.nextLine();
-        System.out.println("ingresar de año");
-        int age=in.nextInt();
         Song song = new Song();
-        song.setName(name);
-        song.setGenero(singer);
-        song.setAge(age);
+
+        System.out.println("Ingresar nombre de la cancion");
+        song.setName(sc.nextLine());
+
+        System.out.println("Ingresar nombre del artista");
+        song.setSinger(sc.nextLine());
+
+        System.out.println("Ingresar duracion de la cancion");
+        song.setSongDuration(sc.nextLine());
+
+        System.out.println("Ingresar año de la cancion");
+        song.setAge(sc.nextInt());
+
+        System.out.println("Ingresar portada de la cancion");
+        song.setCoverPage(sc.nextLine());
+
+        System.out.println("Ingresar descripcion de la cancion");
+        song.setDescription(sc.nextLine());
+
         lisSong.add(song);
     }
 
@@ -139,12 +149,14 @@ public abstract class LisSong implements FilterMelodi {
     public void getSong() {
 
         for (int i = 0; i < lisSong.size(); i++) {
-            System.out.println("[Numero: ]"+(+i+1));
-            System.out.println("[NOMBRE: ]"+lisSong.get(i).getName());
-            System.out.println("[artista: ]"+lisSong.get(i).getSinger());
-            System.out.println("[año: ]"+lisSong.get(i).getAge());
+            System.out.println("Numero: "+ (+i+1));
+            System.out.println("Titulo: "+ lisSong.get(i).getName());
+            System.out.println("Artista: "+ lisSong.get(i).getSinger());
+            System.out.println("Año: "+ lisSong.get(i).getAge());
+            System.out.println("Duracion: "+ lisSong.get(i).getSongDuration() + " minutos");
+            System.out.println("Portada: "+ lisSong.get(i).getCoverPage() + ".jpg");
+            System.out.println("Descripcion: "+ lisSong.get(i).getDescription() + "\n");
         }
-
     }
     @Override
     public void clearListSong(){
