@@ -62,9 +62,11 @@ public class Main {
                             "Menu Principal\n"
                                     + "1. Agregar cancion\n"
                                     + "2. Listar canciones de este genero\n"
-                                    + "3. Listar Canciones por año\n"
-                                    + "4. Eliminar lista\n"
-                                    + "5. Exit");
+                                    + "3. Listar canciones por año\n"
+                                    + "4. Filtrar canciones por fecha\n"
+                                    + "5. Filtrar canciones por duracion\n"
+                                    + "6. Eliminar lista\n"
+                                    + "7. Exit");
                     System.out.println("");
                     System.out.println("Ingresar opcion: ");
                     System.out.println("--------------------------------------------------------------------");
@@ -80,13 +82,20 @@ public class Main {
                         case 3:
                             pop1.getToList();
                             break;
+
                         case 4:
-                            pop1.clearListSong();
+                            pop1.filterByDate();
                             break;
 
                         case 5:
-                            System.out.println("inicio");
+                            pop1.filterByDuration();
+
+                        case 6:
+                            pop1.clearListSong();
                             break;
+
+                        case 7:
+                            System.out.println("inicio");
 
                         default:
                             System.out.println("no valido");
@@ -94,7 +103,7 @@ public class Main {
 
                     }
                     System.out.println("--------------------------------------------------------------------");
-                } while (opcion != 5);
+                } while (opcion != 7);
 
             }else if(opcion1==2) {
 
@@ -105,9 +114,11 @@ public class Main {
                             "Menu Principal\n"
                                     + "1. Agregar cancion\n"
                                     + "2. Listar canciones de este genero\n"
-                                    + "3. Listar Canciones por año\n"
-                                    + "4. Eliminar lista\n"
-                                    + "5. Exit");
+                                    + "3. Listar canciones por año\n"
+                                    + "4. Filtrar canciones por fecha\n"
+                                    + "5. Filtrar canciones por duracion\n"
+                                    + "6. Eliminar lista\n"
+                                    + "7. Exit");
                     System.out.println("");
                     System.out.println("--------------------------------------------------------------------");
                     opcion = in.nextByte();
@@ -124,21 +135,27 @@ public class Main {
                             reggaeton1.getToList();
                             break;
                         case 4:
-                            reggaeton1.clearListSong();
+                            reggaeton1.filterByDate();
                             break;
 
                         case 5:
-                            System.out.println("inicio");
+                            reggaeton1.filterByDuration();
+
+                        case 6:
+                            reggaeton1.clearListSong();
                             break;
+
+                        case 7:
+                            System.out.println("inicio");
 
                         default:
                             System.out.println("no valido");
                             break;
 
                     }
-                } while (opcion != 5);
+                } while (opcion != 7);
 
-            }else if(opcion1==3) {
+            }else if(opcion1 == 3) {
 
                 byte opcion;
 
@@ -147,9 +164,11 @@ public class Main {
                             "Menu Principal\n"
                                     + "1. Agregar cancion\n"
                                     + "2. Listar canciones de este genero\n"
-                                    + "3. Listar Canciones por año\n"
-                                    + "4. Eliminar lista\n"
-                                    + "5. Exit");
+                                    + "3. Listar canciones por año\n"
+                                    + "4. Filtrar canciones por fecha\n"
+                                    + "5. Filtrar canciones por duracion\n"
+                                    + "6. Eliminar lista\n"
+                                    + "7. Exit");
                     System.out.println("");
                     System.out.println("--------------------------------------------------------------------");
                     opcion = in.nextByte();
@@ -168,12 +187,18 @@ public class Main {
                             break;
 
                         case 4:
-                            rock1.clearListSong();
+                            rock1.filterByDate();
                             break;
 
                         case 5:
-                            System.out.println("inicio");
+                            rock1.filterByDuration();
+
+                        case 6:
+                            rock1.clearListSong();
                             break;
+
+                        case 7:
+                            System.out.println("inicio");
 
                         default:
                             System.out.println("no valido");
@@ -181,7 +206,7 @@ public class Main {
 
                     }
 
-                } while (opcion != 5);
+                } while (opcion != 7);
 
             } else if(opcion1==4) {
 
@@ -192,9 +217,11 @@ public class Main {
                             "Menu Principal\n"
                                     + "1. Agregar cancion\n"
                                     + "2. Listar canciones de este genero\n"
-                                    + "3. Listar Canciones por año\n"
-                                    + "4. Eliminar lista\n"
-                                    + "5. Exit");
+                                    + "3. Listar canciones por año\n"
+                                    + "4. Filtrar canciones por fecha\n"
+                                    + "5. Filtrar canciones por duracion\n"
+                                    + "6. Eliminar lista\n"
+                                    + "7. Exit");
                     System.out.println("");
                     System.out.println("--------------------------------------------------------------------");
                     opcion = in.nextByte();
@@ -213,18 +240,24 @@ public class Main {
                             break;
 
                         case 4:
-                            salsa1.clearListSong();
+                            salsa1.filterByDate();
                             break;
 
                         case 5:
-                            System.out.println("inicio");
+                            salsa1.filterByDuration();
+
+                        case 6:
+                            salsa1.clearListSong();
                             break;
+
+                        case 7:
+                            System.out.println("inicio");
 
                         default:
                             System.out.println("no valido");
                             break;
                     }
-                } while (opcion != 5);
+                } while (opcion != 7);
 
             } else if(opcion1==5) {
 
@@ -235,9 +268,11 @@ public class Main {
                             "Menu Principal\n"
                                     + "1. Agregar cancion\n"
                                     + "2. Listar canciones de este genero\n"
-                                    + "3. Listar Canciones por año\n"
-                                    + "4. Eliminar lista\n"
-                                    + "5. Exit");
+                                    + "3. Listar canciones por año\n"
+                                    + "4. Filtrar canciones por fecha\n"
+                                    + "5. Filtrar canciones por duracion\n"
+                                    + "6. Eliminar lista\n"
+                                    + "7. Exit");
                     System.out.println("");
                     System.out.println("--------------------------------------------------------------------");
                     opcion = in.nextByte();
@@ -256,18 +291,24 @@ public class Main {
                             break;
 
                         case 4:
-                            blues1.clearListSong();
+                            blues1.filterByDate();
                             break;
 
                         case 5:
-                            System.out.println("inicio");
+                            blues1.filterByDuration();
+
+                        case 6:
+                            blues1.clearListSong();
                             break;
+
+                        case 7:
+                            System.out.println("inicio");
 
                         default:
                             System.out.println("no valido");
                             break;
                     }
-                } while (opcion != 5);
+                } while (opcion != 7);
 
             } else if(opcion1==6) {
                 System.out.println("");

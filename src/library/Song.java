@@ -1,5 +1,8 @@
 package library;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * [Detalle el objetivo de la clase.
  *
@@ -31,6 +34,7 @@ public class Song extends LisSong {
     private String name;
     private String singer;
     private String songDuration;
+    private String date;
     private  int age;
     private String coverPage;
     private String description;
@@ -41,6 +45,8 @@ public class Song extends LisSong {
         name = "";
         singer ="";
         songDuration="";
+        date = date;
+
         int age = 0;
         coverPage = "";
         description = "";
@@ -101,5 +107,13 @@ public class Song extends LisSong {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

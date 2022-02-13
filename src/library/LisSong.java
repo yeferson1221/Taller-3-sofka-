@@ -72,6 +72,10 @@ public abstract class LisSong implements FilterMelodi {
         System.out.println("Ingresar duracion de la cancion");
         song.setSongDuration(sc.nextLine());
 
+        System.out.println("Ingresar fecha de la cancion");
+        song.setDate(sc.nextLine());
+
+
         System.out.println("Ingresar año de la cancion");
         song.setAge(sc.nextInt());
 
@@ -85,7 +89,7 @@ public abstract class LisSong implements FilterMelodi {
     }
 
     /**
-     * [metodo getTolist nos permite filtrar las caiones por año esta
+     * [metodo getTolist nos permite filtrar las canciones por año esta
      * es un arrayList que se esta comparando con esta misma pero en  difetente indice.
      *
      * incorpore indicaciones de uso del mismo para facilitar su compresión.
@@ -152,6 +156,7 @@ public abstract class LisSong implements FilterMelodi {
             System.out.println("Numero: "+ (+i+1));
             System.out.println("Titulo: "+ lisSong.get(i).getName());
             System.out.println("Artista: "+ lisSong.get(i).getSinger());
+            System.out.println("Fecha: "+ lisSong.get(i).getDate());
             System.out.println("Año: "+ lisSong.get(i).getAge());
             System.out.println("Duracion: "+ lisSong.get(i).getSongDuration() + " minutos");
             System.out.println("Portada: "+ lisSong.get(i).getCoverPage() + ".jpg");
@@ -161,6 +166,41 @@ public abstract class LisSong implements FilterMelodi {
     @Override
     public void clearListSong(){
         lisSong.clear();
+    }
+
+
+    public void filterByDate(){
+        System.out.println("Ingresar fecha de la cancion");
+        String date = sc.nextLine();
+        for (int i = 0; i < lisSong.size(); i++) {
+            if (lisSong.get(i).getDate().equals(date)) {
+                System.out.println("Numero: "+ (+i+1));
+                System.out.println("Titulo: "+ lisSong.get(i).getName());
+                System.out.println("Artista: "+ lisSong.get(i).getSinger());
+                System.out.println("Fecha: "+ lisSong.get(i).getDate());
+                System.out.println("Año: "+ lisSong.get(i).getAge());
+                System.out.println("Duracion: "+ lisSong.get(i).getSongDuration() + " minutos");
+                System.out.println("Portada: "+ lisSong.get(i).getCoverPage() + ".jpg");
+                System.out.println("Descripcion: "+ lisSong.get(i).getDescription() + "\n");
+            }
+        }
+    }
+
+    public void filterByDuration(){
+        System.out.println("Ingresar duracion de la cancion");
+        String duration = sc.nextLine();
+        for (int i = 0; i < lisSong.size(); i++) {
+            if (lisSong.get(i).getSongDuration().equals(duration) ) {
+                System.out.println("Numero: "+ (+i+1));
+                System.out.println("Titulo: "+ lisSong.get(i).getName());
+                System.out.println("Artista: "+ lisSong.get(i).getSinger());
+                System.out.println("Fecha: "+ lisSong.get(i).getDate());
+                System.out.println("Año: "+ lisSong.get(i).getAge());
+                System.out.println("Duracion: "+ lisSong.get(i).getSongDuration() + " minutos");
+                System.out.println("Portada: "+ lisSong.get(i).getCoverPage() + ".jpg");
+                System.out.println("Descripcion: "+ lisSong.get(i).getDescription() + "\n");
+            }
+        }
     }
 
 }
