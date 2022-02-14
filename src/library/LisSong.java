@@ -3,31 +3,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * [Detalle el objetivo de la clase.
+ * [Esta es la clase abstracta que contiene los metodos logicos para lograr el listado por año
+ * fecha,duracion,listar canciones favoritas o elegidas por el uduario, tambien contiene los metodos
+ * tradios de la interface FilterMelodi y los metodos para agregar canciones e imprimirlas
  *
- * incorpore indicaciones de uso de la clase para facilitar su compresión.
- * ej.:
+ * @version [I
+ *           ej: 1.04.05 2022-02-12,
  *
- *   EstaClase clase = new EstaClase(arg, arg1, ..., argN);
- *   clase.setUnaPropiedad(valor);
- *   ValorDeRespuesta valor = clase.execute();
- * ]
- *
- * @version [Ingrese el número de versión con el siguiente formato: VS.CM.cm AAAA-mm-dd
- *           "VS" indica la versión actual del sistema,
- *           "CM" indica un refactoring de la clase,
- *           "cm" indica un cambio menor en alguna sección de la misma
- *
- *           ej: 4.02.003 2011-08-01, La clase corresponde a la versión 4 del sistema,
- *               la misma a sufrido 2 refactorings durante la versión
- *               se realizaron 3 cambios menores luego del segundo refactoring
- *               el último cambio fue realizado el 1 de agosto de 2011]
- *
- * @author [Ingrese nombre, apellido y correo electrónico del autor.
- *           ej: Fulano DeTal – fulano.detal@swissmedical.com.ar]
- *
- * @since [Ingrese desde que versión del sistema está presente la clase]
- *
+ * @author [Yeferson Valencia, alejandro.yandd@gmail.com]
  */
 public abstract class LisSong implements FilterMelodi {
 
@@ -39,26 +22,17 @@ public abstract class LisSong implements FilterMelodi {
 
 
 /**
- * [Detalle el objetivo del método.
+ * [ingresa los datos tales como nombre, cantante,tiempo de duracion,
+ * año, fecha, caratula y texto de las canciones por consola
  *
- * incorpore indicaciones de uso del mismo para facilitar su compresión.
- * ej.:
- *
- *   ...;
+ *...;
  *   clase.unaLogicaDeNegocioDeterminada(valor1, valor2);
  *   ValorDeRespuesta valor = clase.execute();
  * ]
- *
- * @param arg
- * @param arg2
- * @return
  * @throws Exception
  *
- * @author [Ingrese nombre, apellido y correo electrónico del autor.
+ * @author [Yeferson Valencia, alejandro.yandd@gmail.com
  *            ej: Fulano DeTal – fulano.detal@swissmedical.com.ar]
- *
- * @since [Ingrese desde que versión del sistema está presente el método]
- *
  */
     public void addSong() {
         Song song = new Song();
@@ -89,23 +63,18 @@ public abstract class LisSong implements FilterMelodi {
     }
 
     /**
-     * [metodo getTolist nos permite filtrar las canciones por año esta
-     * es un arrayList que se esta comparando con esta misma pero en  difetente indice.
-     *
+     * [metodo getTolist nos permite filtrar las canciones por año donde se ubican de mayor a menor esta
+     * es un arrayList que se esta comparando con esta misma pero en  difetente indice
+     * para poder cambir de posicion hasta ordenar todo el listado
      * incorpore indicaciones de uso del mismo para facilitar su compresión.
-     * ej.:
-     *
-     *   ...;
+
      *   clase.unaLogicaDeNegocioDeterminada(valor1, valor2);
      *   ValorDeRespuesta valor = clase.execute();
      * ]
      *
-     * @param arg
-     * @param arg2
-     * @return
-     * @throws Exception
-     *
-     * @author [Yeferson Valencia, apellido y correo electrónico del autor.
+     * @param lisSong
+     * @param hegher
+     * @author [Yeferson Valencia, alejandro.yandd@gmail.com
      *
      * @since [1.0.0]
      *
@@ -125,7 +94,8 @@ public abstract class LisSong implements FilterMelodi {
         }
 
         for (Song num: lisSong) {
-            System.out.println(num.getName() + " " + num.getAge());
+            System.out.println(":::::::::::::::::::::::::::::::::");
+            System.out.println("Cancion: "+num.getName() + " El año" + num.getAge());
         }
     }
 
@@ -150,6 +120,7 @@ public abstract class LisSong implements FilterMelodi {
      * @since [1.0.0]
      *
      */
+    @Override
     public void getSong() {
 
         for (int i = 0; i < lisSong.size(); i++) {
@@ -163,10 +134,56 @@ public abstract class LisSong implements FilterMelodi {
             System.out.println("Descripcion: "+ lisSong.get(i).getDescription() + "\n");
         }
     }
+
+    /**
+     * [Permite crear el listado de canciones que el usuario quiera agregar
+
+     *   clase.unaLogicaDeNegocioDeterminada(valor1, valor2);
+     *   ValorDeRespuesta valor = clase.execute();
+     * ]
+     *
+     * @param lisSong
+     * @param hegher
+     * @author [Yeferson Valencia, apellido y correo electrónico del autor.
+     *
+     * @since [1.0.0]
+     *
+     */
+    public void getSongFavorite(){
+        int numberSong;
+        for(int i = 0; i < lisSong.size(); i++){
+            System.out.println("ingresar numero de cancion: ");
+            numberSong = sc.nextInt()-1;
+            System.out.println("Numero: "+ (numberSong));
+            System.out.println("Titulo: "+ lisSong.get(numberSong).getName());
+            System.out.println("Artista: "+ lisSong.get(numberSong).getSinger());
+            System.out.println("Fecha: "+ lisSong.get(numberSong).getDate());
+            System.out.println("Año: "+ lisSong.get(numberSong).getAge());
+            System.out.println("Duracion: "+ lisSong.get(numberSong).getSongDuration() + " minutos");
+            System.out.println("Portada: "+ lisSong.get(numberSong).getCoverPage() + ".jpg");
+            System.out.println("Descripcion: "+ lisSong.get(numberSong).getDescription() + "\n");
+        }
+    }
+
+    /**
+     * [Permite eliminar el listado de canciones agregadas
+
+     *   clase.unaLogicaDeNegocioDeterminada(valor1, valor2);
+     *   ValorDeRespuesta valor = clase.execute();
+     * ]
+     *
+     * @param lisSong
+     * @param hegher
+     * @author [Yeferson Valencia, apellido y correo electrónico del autor.
+     *
+     * @since [1.0.0]
+     *
+     */
     @Override
     public void clearListSong(){
         lisSong.clear();
     }
+
 
 
     public void filterByDate(){

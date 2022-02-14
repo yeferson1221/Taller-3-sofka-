@@ -2,31 +2,15 @@ package library;
 
 import java.util.Scanner;
 /**
- * [Detalle el objetivo de la clase.
+ * [clase main aqui estamos inicializando el proyecto.
+ * tambien se agregar  algunos for y condicionales para imprimir
+ * las opciones del listado de canciones
  *
- * incorpore indicaciones de uso de la clase para facilitar su compresión.
- * ej.:
- *
- *   EstaClase Main = new EstaClase(arg, arg1, ..., argN);
- *   clase.setUnaPropiedad(valor);
- *   ValorDeRespuesta valor = clase.execute();
  * ]
  *
- * @version [Ingrese el número de versión con el siguiente formato: VS.CM.cm AAAA-mm-dd
- *           "VS" indica la versión actual del sistema,
- *           "CM" indica un refactoring de la clase,
- *           "cm" indica un cambio menor en alguna sección de la misma
- *
- *           ej: 4.02.003 2011-08-01, La clase corresponde a la versión 4 del sistema,
- *               la misma a sufrido 2 refactorings durante la versión
- *               se realizaron 3 cambios menores luego del segundo refactoring
- *               el último cambio fue realizado el 1 de agosto de 2011]
+ * @version [1.02.003 2022-13
  *
  * @author [Yeferson Valencia, alejandro.yand@gmail.com
- *           ej: Fulano DeTal – fulano.detal@swissmedical.com.ar]
- *
- * @since [1,0,0]
- *
  */
 public class Main {
 
@@ -65,8 +49,9 @@ public class Main {
                                     + "3. Listar canciones por año\n"
                                     + "4. Filtrar canciones por fecha\n"
                                     + "5. Filtrar canciones por duracion\n"
-                                    + "6. Eliminar lista\n"
-                                    + "7. Exit");
+                                    + "6. Agregar listado de canciondes Favoritas\n"
+                                    + "7. Eliminar lista\n"
+                                    + "8. Exit");
                     System.out.println("");
                     System.out.println("Ingresar opcion: ");
                     System.out.println("--------------------------------------------------------------------");
@@ -89,13 +74,20 @@ public class Main {
 
                         case 5:
                             pop1.filterByDuration();
+                            break;
 
                         case 6:
+                            pop1.getSongFavorite();
+                            break;
+
+
+                        case 7:
                             pop1.clearListSong();
                             break;
 
-                        case 7:
+                        case 8:
                             System.out.println("inicio");
+                            break;
 
                         default:
                             System.out.println("no valido");
@@ -103,7 +95,7 @@ public class Main {
 
                     }
                     System.out.println("--------------------------------------------------------------------");
-                } while (opcion != 7);
+                } while (opcion != 8);
 
             }else if(opcion1==2) {
 
@@ -117,8 +109,9 @@ public class Main {
                                     + "3. Listar canciones por año\n"
                                     + "4. Filtrar canciones por fecha\n"
                                     + "5. Filtrar canciones por duracion\n"
-                                    + "6. Eliminar lista\n"
-                                    + "7. Exit");
+                                    + "6. Agregar listado de canciondes Favoritas\n"
+                                    + "7. Eliminar lista\n"
+                                    + "8. Exit");
                     System.out.println("");
                     System.out.println("--------------------------------------------------------------------");
                     opcion = in.nextByte();
@@ -140,20 +133,27 @@ public class Main {
 
                         case 5:
                             reggaeton1.filterByDuration();
+                            break;
 
                         case 6:
+                            reggaeton1.getSongFavorite();
+                            break;
+
+
+                        case 7:
                             reggaeton1.clearListSong();
                             break;
 
-                        case 7:
+                        case 8:
                             System.out.println("inicio");
+                            break;
 
                         default:
                             System.out.println("no valido");
                             break;
 
                     }
-                } while (opcion != 7);
+                } while (opcion != 8);
 
             }else if(opcion1 == 3) {
 
@@ -167,8 +167,9 @@ public class Main {
                                     + "3. Listar canciones por año\n"
                                     + "4. Filtrar canciones por fecha\n"
                                     + "5. Filtrar canciones por duracion\n"
-                                    + "6. Eliminar lista\n"
-                                    + "7. Exit");
+                                    + "6. Agregar listado de canciondes Favoritas\n"
+                                    + "7. Eliminar lista\n"
+                                    + "8. Exit");
                     System.out.println("");
                     System.out.println("--------------------------------------------------------------------");
                     opcion = in.nextByte();
@@ -192,13 +193,20 @@ public class Main {
 
                         case 5:
                             rock1.filterByDuration();
+                            break;
 
                         case 6:
+                            rock1.getSongFavorite();
+                            break;
+
+
+                        case 7:
                             rock1.clearListSong();
                             break;
 
-                        case 7:
+                        case 8:
                             System.out.println("inicio");
+                            break;
 
                         default:
                             System.out.println("no valido");
@@ -206,7 +214,7 @@ public class Main {
 
                     }
 
-                } while (opcion != 7);
+                } while (opcion != 8);
 
             } else if(opcion1==4) {
 
@@ -220,8 +228,9 @@ public class Main {
                                     + "3. Listar canciones por año\n"
                                     + "4. Filtrar canciones por fecha\n"
                                     + "5. Filtrar canciones por duracion\n"
-                                    + "6. Eliminar lista\n"
-                                    + "7. Exit");
+                                    + "6. Agregar listado de canciondes Favoritas\n"
+                                    + "7. Eliminar lista\n"
+                                    + "8. Exit");
                     System.out.println("");
                     System.out.println("--------------------------------------------------------------------");
                     opcion = in.nextByte();
@@ -245,19 +254,25 @@ public class Main {
 
                         case 5:
                             salsa1.filterByDuration();
+                        break;
 
                         case 6:
-                            salsa1.clearListSong();
+                            salsa1.getSongFavorite();
                             break;
 
                         case 7:
+                            salsa1.clearListSong();
+                            break;
+
+                        case 8:
                             System.out.println("inicio");
+                            break;
 
                         default:
                             System.out.println("no valido");
                             break;
                     }
-                } while (opcion != 7);
+                } while (opcion != 8);
 
             } else if(opcion1==5) {
 
@@ -271,8 +286,9 @@ public class Main {
                                     + "3. Listar canciones por año\n"
                                     + "4. Filtrar canciones por fecha\n"
                                     + "5. Filtrar canciones por duracion\n"
-                                    + "6. Eliminar lista\n"
-                                    + "7. Exit");
+                                    + "6. Agregar listado de canciondes Favoritas\n"
+                                    + "7. Eliminar lista\n"
+                                    + "8. Exit");
                     System.out.println("");
                     System.out.println("--------------------------------------------------------------------");
                     opcion = in.nextByte();
@@ -296,39 +312,40 @@ public class Main {
 
                         case 5:
                             blues1.filterByDuration();
+                        break;
 
                         case 6:
-                            blues1.clearListSong();
+                            blues1.getSongFavorite();
                             break;
 
                         case 7:
+                            blues1.clearListSong();
+                            break;
+
+                        case 8:
                             System.out.println("inicio");
+                            break;
 
                         default:
                             System.out.println("no valido");
                             break;
                     }
-                } while (opcion != 7);
+                } while (opcion != 8);
 
             } else if(opcion1==6) {
                 System.out.println("");
-                System.out.println("--------------------------------------------------------------------");
                 pop1.getSong();
                 System.out.println("");
-                System.out.println("--------------------------------------------------------------------");
                 reggaeton1.getSong();
                 System.out.println("");
-                System.out.println("--------------------------------------------------------------------");
                 rock1.getSong();
                 System.out.println("");
-                System.out.println("--------------------------------------------------------------------");
                 salsa1.getSong();
                 System.out.println("");
-                System.out.println("--------------------------------------------------------------------");
                 blues1.getSong();
             }
 
-        } while (opcion1 != 7);
+        } while (opcion1 != 8);
     }
 
 
