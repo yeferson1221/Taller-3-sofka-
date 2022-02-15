@@ -33,7 +33,8 @@ public class Main {
                             +"4. SALSA\n"
                             +"5. BLUES\n"
                             +"6. LISTA TODO\n"
-                            +"7. SALIR\n");
+                            +"7. IR YOUTUBE VER MAS\n"// en esta opcion se prueba el try catch
+                            +"8. SALIR\n");
             System.out.println("");
             System.out.println("Ingresar opcion: ");
             System.out.println("--------------------------------------------------------------------");
@@ -343,6 +344,9 @@ public class Main {
                 salsa1.getSong();
                 System.out.println("");
                 blues1.getSong();
+            }else if(opcion1==7){
+                ShowUrl showUrl = new ShowUrl();
+                showUrl.showUrlException2();
             }
 
         } while (opcion1 != 8);
